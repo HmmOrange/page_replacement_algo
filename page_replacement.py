@@ -27,7 +27,6 @@ for option in algo_options:
 
 frame_size = st.sidebar.slider("Số lượng frame", 1, 10, 3)
 
-
 if len(checkbox_options):
     for i in checkbox_options:
         if i == algo_options[0]:
@@ -46,8 +45,9 @@ if len(checkbox_options):
             page_faults, history = second_chance(pages, frame_size)
 
         st.subheader(i)
+        st.write(f"Total Pages: {len(pages)}")
         st.write(f"Total Page Faults: {page_faults}")
-        st.write(f"Hit rate: {round((len(pages) - page_faults) / len(pages) * 100, 2)}%")
+        st.write(f"Hit Rate: {round((len(pages) - page_faults) / len(pages) * 100, 2)}%")
 
         # Creating table
         vertical_history = []
