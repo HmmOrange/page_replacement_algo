@@ -242,6 +242,4 @@ def second_chance(pages, frame_size):
 
         ref_bit[page] = 1
         history.append(page_frame.copy())
-        print(recently_used_queue)
-        print(ref_bit)
     return page_faults, history

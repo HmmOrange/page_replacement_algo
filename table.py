@@ -46,7 +46,6 @@ def render_html_table(data, red_cells):
     return html
 
 def get_highlighted_cells(history):
-    print(history)
     prev_col = [None] * (len(history) - 1)
     red_cells = []
     for i in range(len(history)):

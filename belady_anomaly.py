@@ -20,24 +20,19 @@ algo_options = [
 ]
 
 
-st_options = st.sidebar.multiselect(
-    "Chọn thuật toán",
-    algo_options,
-)   
+checkbox_options = []
+for option in algo_options:
+    checkbox = st.sidebar.checkbox(option)
+    if checkbox:
+        checkbox_options.append(option)
 
-st.markdown(
-    f"""
-    <style>
-        .stMultiSelect [data-baseweb=select] span {{
-            max-width: {1000}px
-        }}
-    </style>""",
-    unsafe_allow_html=True,
-)
 
-if st_options:
+frame_size = st.sidebar.slider("Số lượng frame", 1, 10, 3)
+
+
+if len(checkbox_options):
     frame_sizes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    for i in st_options:
+    for i in checkbox_options:
         page_fault_count = []
         for frame_size in range(1, 11):
             if i == algo_options[0]:

@@ -18,27 +18,18 @@ algo_options = [
     "Second chance - Cơ hội thứ hai"
 ]
 
+checkbox_options = []
+for option in algo_options:
+    checkbox = st.sidebar.checkbox(option)
+    if checkbox:
+        checkbox_options.append(option)
 
-st_options = st.sidebar.multiselect(
-    "Chọn thuật toán",
-    algo_options,
-)   
 
 frame_size = st.sidebar.slider("Số lượng frame", 1, 10, 3)
 
 
-st.markdown(
-    f"""
-    <style>
-        .stMultiSelect [data-baseweb=select] span {{
-            max-width: {1000}px
-        }}
-    </style>""",
-    unsafe_allow_html=True,
-)
-
-if st_options:
-    for i in st_options:
+if len(checkbox_options):
+    for i in checkbox_options:
         if i == algo_options[0]:
             page_faults, history = fifo(pages, frame_size)
         elif i == algo_options[1]:
