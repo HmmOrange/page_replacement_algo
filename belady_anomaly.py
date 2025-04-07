@@ -26,10 +26,6 @@ for option in algo_options:
     if checkbox:
         checkbox_options.append(option)
 
-
-frame_size = st.sidebar.slider("Số lượng frame", 1, 10, 3)
-
-
 if len(checkbox_options):
     frame_sizes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     for i in checkbox_options:
