@@ -4,6 +4,16 @@ import pandas as pd
 from algo import *
 from table import *
 
+st.set_page_config(
+    page_title = "Page Replacement Algorithms",
+    page_icon = "📄",
+    initial_sidebar_state = "expanded",
+    menu_items = {
+        'Get help': 'https://github.com/HmmOrange/page-replacement-algo',
+        'About': "# Made with 💖\nhttps://github.com/HmmOrange/page-replacement-algo",
+    }
+)
+
 st.title("Hiện tượng bất thường Bélády")
 
 pages_input = st.sidebar.text_input("Chuỗi số hiệu", "3, 2, 1, 0, 3, 2, 4, 3, 2, 1, 0, 4")

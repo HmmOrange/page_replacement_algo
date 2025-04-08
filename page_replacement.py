@@ -3,6 +3,18 @@ import pandas as pd
 from algo import *
 from table import *
 
+st.set_page_config(
+    page_title = "Page Replacement Algorithms",
+    page_icon = "📄",
+    layout = "wide",
+    initial_sidebar_state = "expanded",
+    menu_items = {
+        'Get help': 'https://github.com/HmmOrange/page-replacement-algo',
+        'About': "# Made with 💖\nhttps://github.com/HmmOrange/page-replacement-algo",
+    }
+)
+
+
 st.title("Thuật toán thay thế trang")
 
 pages_input = st.sidebar.text_input("Chuỗi số hiệu", "7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 0, 3, 2, 1, 2, 0, 1, 7, 0, 1")
